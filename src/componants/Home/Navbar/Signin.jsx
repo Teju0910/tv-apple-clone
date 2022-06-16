@@ -39,11 +39,9 @@ export const Signin = ({ isOpen, onClose, cancelRef, handelhideshow }) => {
   };
 
   const handelsubmit = (event) => {
-    dispatch(getusertoken({ userlogin, handelhideshow, onClose }));
-    // .then(() => {
-    //   onClose;
-    // });
-    navigate("/dashboard");
+    dispatch(getusertoken({ userlogin, handelhideshow, onClose })).then(() => {
+      onClose();
+    });
   };
 
   return (
@@ -88,7 +86,6 @@ export const Signin = ({ isOpen, onClose, cancelRef, handelhideshow }) => {
                         borderLeftRadius="0"
                         ref={cancelRef}
                         onClick={handelsubmit}
-                        // onClick={onClose}
                       >
                         Login
                       </Button>
@@ -122,6 +119,7 @@ export const Signin = ({ isOpen, onClose, cancelRef, handelhideshow }) => {
               <AlertDialogFooter>
                 <Text
                   color=" #0b057ab8"
+                  onClick={handelhideshow}
                   _hover={{
                     textDecoration: "underline",
                     color: " #057a72b8",

@@ -6,7 +6,7 @@ const initState = {
     isauthenticated: false,
     loading: false,
     token: '',
-    appleid: ""
+    // appleid: ""
 }
 
 
@@ -27,7 +27,7 @@ export const loginreducer = (store = initState, { type, payload }) => {
                 error: false,
                 isauthenticated: true,
                 token: payload.token,
-                appleid: payload.username
+                // appleid: payload.username
             }
         case registeractions.ADD_TOKEN_FAILURE:
             return {
@@ -36,7 +36,7 @@ export const loginreducer = (store = initState, { type, payload }) => {
                 loading: false,
                 isauthenticated: false,
                 token: "",
-                username: ""
+                // username: ""
             }
 
         case registeractions.LOGOUT:
