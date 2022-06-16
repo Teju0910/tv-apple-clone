@@ -89,9 +89,5 @@
             "desc": "Mahershala Ali grapples with altering his family's fate in a tale of love, loss and sacrifice.",
             "link": ""
           }
-        ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+        ]
   }

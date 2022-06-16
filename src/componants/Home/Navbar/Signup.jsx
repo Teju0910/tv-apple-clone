@@ -14,6 +14,11 @@ import {
   Text,
   Stack,
   Link,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
   FormControl,
   InputRightElement,
 } from "@chakra-ui/react";
@@ -27,6 +32,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useReducer } from "react";
 import { registernuser } from "../../../Redux/Registration/action";
+import PricingPlans from "./PricingPlans";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
@@ -57,8 +63,10 @@ export const Signup = ({
 
   const handelsubmit = (event) => {
     event.preventDefault();
-    dispatch(registernuser(user)).then(() => {
-      handelhideshow();
+    dispatch(registernuser(user)).then((res) => {
+      if (res.data.error == false) {
+        handelhideshow();
+      }
     });
   };
 
@@ -71,103 +79,121 @@ export const Signup = ({
         size="2xl"
       >
         <AlertDialogOverlay>
-          <AlertDialogContent minW={{ base: 70, md: 100 }}>
-            <Container centerContent>
-              <Center p={4}>
-                <Heading size="lg">Create Apple ID</Heading>
-              </Center>
-              <FormControl mt={5}>
-                <InputGroup>
-                  <InputLeftElement
-                    pointerEvents="none"
-                    size="lg"
-                    children={
-                      <CFaUserAlt
-                        color="gray.300"
-                        focusBorderColor="pink.400"
-                      />
-                    }
-                  />
-                  <Input
-                    isRequired
-                    type="text"
-                    placeholder="User Name"
-                    name="name"
-                    onChange={handleChange}
-                  />
-                </InputGroup>
-              </FormControl>
-              <FormControl mt={5}>
-                <InputGroup>
-                  <InputLeftElement
-                    pointerEvents="none"
-                    color="gray.300"
-                    children={<MdOutlineEmail color="gray.300" />}
-                  />
-               
-                  <Input
-                    type="email"
-                    placeholder="    Email address"
-                    name="email"
-                    onChange={handleChange}
-                  />
-                </InputGroup>
-                <p>Your email will be your Apple ID.</p>
-              </FormControl>
-              <FormControl mt={5}>
-                <InputGroup>
-                  <InputLeftElement
-                    pointerEvents="none"
-                    color="gray.300"
-                    children={<BsFillCalendarDateFill color="gray.300" />}
-                  />
-                  <Input
-                    type="date"
-                    placeholder="Birth Date"
-                    name="dateofbirth"
-                    // onChange={handleChange}
-                  />
-                </InputGroup>
-              </FormControl>
-              <FormControl mt={5}>
-                <InputGroup>
-                  <Input
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Password"
-                    name="password"
-                    onChange={handleChange}
-                  />
-                  <InputRightElement h={"full"}>
-                    <Button
-                      variant={"ghost"}
-                      onClick={() =>
-                        setShowPassword((showPassword) => !showPassword)
-                      }
-                    >
-                      {showPassword ? <ViewIcon /> : <ViewOffIcon />}
-                    </Button>
-                  </InputRightElement>
-                </InputGroup>
-              </FormControl>
-            </Container>
-            <Center>
-              <AlertDialogFooter>
-                <Button
-                  colorScheme="telegram"
-                  ref={cancelRef}
-                  onClick={handelsubmit}
-                  // onClick={handelhideshow}
-                  //   onClick={onClose}
-                >
-                  Create ID
-                </Button>
-              </AlertDialogFooter>
-            </Center>
-            <Stack pt={3} mb={5}>
-              <Text align={"center"}>
-                Already a user? <Link color={"blue.400"}>Login</Link>
-              </Text>
-            </Stack>
+          <AlertDialogContent minW="max-content">
+            <Tabs size="md" variant="enclosed">
+              <TabList>
+                <Center>
+                  <Tab>Tab 1</Tab>
+                  <Tab>Tab 2</Tab>
+                </Center>
+              </TabList>
+              <TabPanels>
+                <TabPanel>
+                  <Container centerContent>
+                    <Center p={4}>
+                      <Heading size="lg">Create Apple ID</Heading>
+                    </Center>
+                    <FormControl mt={5}>
+                      <InputGroup>
+                        <InputLeftElement
+                          pointerEvents="none"
+                          size="lg"
+                          children={
+                            <CFaUserAlt
+                              color="gray.300"
+                              focusBorderColor="pink.400"
+                            />
+                          }
+                        />
+                        <Input
+                          isRequired
+                          type="text"
+                          placeholder="User Name"
+                          name="name"
+                          onChange={handleChange}
+                        />
+                      </InputGroup>
+                    </FormControl>
+                    <FormControl mt={5}>
+                      <InputGroup>
+                        <InputLeftElement
+                          pointerEvents="none"
+                          color="gray.300"
+                          children={<MdOutlineEmail color="gray.300" />}
+                        />
+
+                        <Input
+                          type="email"
+                          placeholder="    Email address"
+                          name="email"
+                          onChange={handleChange}
+                        />
+                      </InputGroup>
+                      <p>Your email will be your Apple ID.</p>
+                    </FormControl>
+                    <FormControl mt={5}>
+                      <InputGroup>
+                        <InputLeftElement
+                          pointerEvents="none"
+                          color="gray.300"
+                          children={<BsFillCalendarDateFill color="gray.300" />}
+                        />
+                        <Input
+                          type="date"
+                          placeholder="Birth Date"
+                          name="dateofbirth"
+                          // onChange={handleChange}
+                        />
+                      </InputGroup>
+                    </FormControl>
+                    <FormControl mt={5}>
+                      <InputGroup>
+                        <Input
+                          type={showPassword ? "text" : "password"}
+                          placeholder="Password"
+                          name="password"
+                          onChange={handleChange}
+                        />
+                        <InputRightElement h={"full"}>
+                          <Button
+                            variant={"ghost"}
+                            onClick={() =>
+                              setShowPassword((showPassword) => !showPassword)
+                            }
+                          >
+                            {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                          </Button>
+                        </InputRightElement>
+                      </InputGroup>
+                    </FormControl>
+                  </Container>
+                  <Center>
+                    <AlertDialogFooter>
+                      <Button
+                        colorScheme="telegram"
+                        ref={cancelRef}
+                        onClick={handelsubmit}
+                        // onClick={handelhideshow}
+                        //   onClick={onClose}
+                      >
+                        Create ID
+                      </Button>
+                    </AlertDialogFooter>
+                  </Center>
+                  <Stack pt={3} mb={5}>
+                    <Text align={"center"}>
+                      Already a user?{" "}
+                      <Link color={"blue.400"} onClick={handelhideshow}>
+                        Login
+                      </Link>
+                    </Text>
+                  </Stack>
+                </TabPanel>
+                <TabPanel>
+                  <PricingPlans />
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
           </AlertDialogContent>
         </AlertDialogOverlay>
       </AlertDialog>

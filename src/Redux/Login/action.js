@@ -31,13 +31,8 @@ export const addtokenerr = () => {
     };
 }
 
-export const logout = () => (
-    { type: "LOGOUT" }
-);
-
 
 export const getusertoken = ({ userlogin, onClose }) => (dispatch) => {
-
     dispatch(addtokenreq());
     console.log(userlogin)
     return axios.post('https://ghost-auth-service.herokuapp.com/login', userlogin)
@@ -45,6 +40,7 @@ export const getusertoken = ({ userlogin, onClose }) => (dispatch) => {
             alert("Logged In Successful")
             localStorage.setItem('tvappletoken', JSON.stringify(res.data.token));
             dispatch(addtokenres(res.data.token))
+
             // if (res.data.error == false) {
             //     onClose()
             // }
@@ -57,12 +53,13 @@ export const getusertoken = ({ userlogin, onClose }) => (dispatch) => {
 
 export const removeuser = () => {
     return {
-        type: registeractions.REMOVE_TOKEN_REQUEST,
-        payload: ""
+        type: registeractions.LOGOUT,
     };
 }
 
 export const signout = () => (dispatch) => {
+    console.log("logout done*")
     dispatch(removeuser());
     localStorage.setItem('tvappletoken', JSON.stringify(""));
+    console.log("logout done")
 }

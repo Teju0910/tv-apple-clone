@@ -21,17 +21,26 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { Signin } from "./Signin";
 import { Signup } from "./Signup";
-import { useDispatch } from "react-redux";
-import { logout } from "../../../Redux/Login/action";
+import { useDispatch, useSelector } from "react-redux";
+import { signout } from "../../../Redux/Login/action";
 
 function Navbar() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const token = JSON.parse(localStorage.getItem("tvappletoken"));
+  const reduxtoken = useSelector((store) => store);
+  console.log(reduxtoken, "tokk");
   const [hide, sethide] = useState(true);
+  useEffect(() => {}, [token]);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const cancelRef = React.useRef();
   const dispatch = useDispatch();
-  const token = JSON.parse(localStorage.getItem("tvappletoken"));
+
   const handelhideshow = () => {
     sethide(!hide);
+  };
+
+  const handellogout = () => {
+    dispatch(signout());
   };
   return (
     <Flex
@@ -53,7 +62,7 @@ function Navbar() {
         </Link>
       </Box>
       <Spacer />
-      {token == undefined || token == "" ? (
+      {token == undefined || token == "" || reduxtoken == "" ? (
         <ButtonGroup gap="2">
           <Button
             leftIcon={<BsPerson />}
@@ -98,12 +107,8 @@ function Navbar() {
             />
           </MenuButton>
           <MenuList>
-            <MenuItem
-              onSelect={() => {
-                dispatch(logout());
-              }}
-            >
-              Logout
+            <MenuItem>
+              <Button onClick={handellogout}>Logout</Button>
             </MenuItem>
           </MenuList>
         </Menu>
@@ -113,6 +118,3 @@ function Navbar() {
 }
 
 export default Navbar;
-// dispatch(getusertoken({ userlogin, handelhideshow, onClose })).then(() => {
-//   onClose();
-// });

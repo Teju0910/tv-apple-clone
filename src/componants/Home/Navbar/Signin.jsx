@@ -39,9 +39,13 @@ export const Signin = ({ isOpen, onClose, cancelRef, handelhideshow }) => {
   };
 
   const handelsubmit = (event) => {
-    dispatch(getusertoken({ userlogin, handelhideshow, onClose })).then(() => {
-      onClose();
-    });
+    dispatch(getusertoken({ userlogin, handelhideshow, onClose })).then(
+      (res) => {
+        if (res.data.error == false) {
+          onClose();
+        }
+      }
+    );
   };
 
   return (
@@ -71,8 +75,8 @@ export const Signin = ({ isOpen, onClose, cancelRef, handelhideshow }) => {
                     You will be signed in to Apple TV and Apple Music
                   </FormLabel>
                 </Center>
-                <Center p={2}>
-                  <FormControl>
+                <Center>
+                  <FormControl w={300}>
                     <InputGroup>
                       <Input
                         isRequired
@@ -92,7 +96,10 @@ export const Signin = ({ isOpen, onClose, cancelRef, handelhideshow }) => {
                       {/* <InputRightAddon children="Login" cursor="pointer" /> */}
                     </InputGroup>
                   </FormControl>
-                  <FormControl>
+                </Center>
+                <br />
+                <Center>
+                  <FormControl w={300}>
                     <InputGroup>
                       <Input
                         type={showPassword ? "text" : "password"}

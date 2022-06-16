@@ -26,7 +26,7 @@ export const loginreducer = (store = initState, { type, payload }) => {
                 loading: false,
                 error: false,
                 isauthenticated: true,
-                token: payload.token,
+                token: payload,
                 // appleid: payload.username
             }
         case registeractions.ADD_TOKEN_FAILURE:
