@@ -22,16 +22,19 @@ function Navbar() {
   const [hide, sethide] = useState(true);
   const cancelRef = React.useRef();
 
-  const handelhideshow = () => {
+   const handelhideshow = () => {
     sethide(!hide);
   };
   return (
     <Flex
-      minWidth="max-content"
+      top={0}
       alignItems="center"
       gap="2"
+      width="100%"
       background="black"
       p={2}
+      zIndex={10}
+      position="fixed"
     >
       <Box p="2">
         <Link to="/">

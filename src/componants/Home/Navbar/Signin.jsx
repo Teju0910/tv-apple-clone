@@ -6,6 +6,7 @@ import {
   Input,
   Text,
   Center,
+  InputRightElement,
   AlertDialogFooter,
   AlertDialogContent,
   InputGroup,
@@ -13,8 +14,38 @@ import {
   FormLabel,
   AlertDialogOverlay,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { getusertoken } from "../../../Redux/Login/action";
+import { useNavigate } from "react-router-dom";
+
+const init = {
+  email: "",
+  password: "",
+};
+
 export const Signin = ({ isOpen, onClose, cancelRef, handelhideshow }) => {
+  const [userlogin, setuserlogin] = useState(init);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleShowClick = () => setShowPassword(!showPassword);
+
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    setuserlogin({ ...userlogin, [name]: value });
+  };
+
+  const handelsubmit = (event) => {
+    dispatch(getusertoken({ userlogin, handelhideshow, onClose }));
+    // .then(() => {
+    //   onClose;
+    // });
+    navigate("/dashboard");
+  };
+
   return (
     <>
       <AlertDialog
@@ -43,29 +74,53 @@ export const Signin = ({ isOpen, onClose, cancelRef, handelhideshow }) => {
                   </FormLabel>
                 </Center>
                 <Center p={2}>
-                  <InputGroup>
-                    <Input
-                      isRequired
-                      id="first-name"
-                      placeholder="Apple ID"
-                      borderRightRadius="0"
-                    />
-                    <Button
-                      borderLeftRadius="0"
-                      ref={cancelRef}
-                      onClick={onClose}
-                    >
-                      Login
-                    </Button>
-                    {/* <InputRightAddon children="Login" cursor="pointer" /> */}
-                  </InputGroup>
+                  <FormControl>
+                    <InputGroup>
+                      <Input
+                        isRequired
+                        id="first-name"
+                        placeholder="Apple ID"
+                        borderRightRadius="0"
+                        name="email"
+                        onChange={handleChange}
+                      />
+                      <Button
+                        borderLeftRadius="0"
+                        ref={cancelRef}
+                        onClick={handelsubmit}
+                        // onClick={onClose}
+                      >
+                        Login
+                      </Button>
+                      {/* <InputRightAddon children="Login" cursor="pointer" /> */}
+                    </InputGroup>
+                  </FormControl>
+                  <FormControl>
+                    <InputGroup>
+                      <Input
+                        type={showPassword ? "text" : "password"}
+                        placeholder="Password"
+                        name="password"
+                        onChange={handleChange}
+                      />
+                      <InputRightElement h={"full"}>
+                        <Button
+                          variant={"ghost"}
+                          onClick={() =>
+                            setShowPassword((showPassword) => !showPassword)
+                          }
+                        >
+                          {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                        </Button>
+                      </InputRightElement>
+                    </InputGroup>
+                  </FormControl>
                 </Center>
               </FormControl>
             </Container>
             <Center p={5}>
               <AlertDialogFooter>
                 <Text
-                  onClick={handelhideshow}
                   color=" #0b057ab8"
                   _hover={{
                     textDecoration: "underline",

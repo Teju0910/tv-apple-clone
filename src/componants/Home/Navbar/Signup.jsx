@@ -22,9 +22,21 @@ import { MdOutlineEmail } from "react-icons/md";
 import { BsFillCalendarDateFill } from "react-icons/bs";
 import { FaUserAlt, FaLock } from "react-icons/fa";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useReducer } from "react";
+import { registernuser } from "../../../Redux/Registration/action";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
+
+const initState = {
+  name: "",
+  email: "",
+  password: "",
+  // dateofbirth: "",
+};
+
 export const Signup = ({
   isOpen,
   onOpen,
@@ -33,7 +45,22 @@ export const Signup = ({
   handelhideshow,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const [user, setuser] = useState(initState);
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    setuser({ ...user, [name]: value });
+  };
+
   const handleShowClick = () => setShowPassword(!showPassword);
+
+  const handelsubmit = (event) => {
+    event.preventDefault();
+    dispatch(registernuser(user)).then(() => {
+      handelhideshow();
+    });
+  };
 
   return (
     <>
@@ -61,7 +88,13 @@ export const Signup = ({
                       />
                     }
                   />
-                  <Input isRequired type="text" placeholder="User Name" />
+                  <Input
+                    isRequired
+                    type="text"
+                    placeholder="User Name"
+                    name="name"
+                    onChange={handleChange}
+                  />
                 </InputGroup>
               </FormControl>
               <FormControl mt={5}>
@@ -71,7 +104,13 @@ export const Signup = ({
                     color="gray.300"
                     children={<MdOutlineEmail color="gray.300" />}
                   />
-                  <Input type="email" placeholder="    Email address" />
+               
+                  <Input
+                    type="email"
+                    placeholder="    Email address"
+                    name="email"
+                    onChange={handleChange}
+                  />
                 </InputGroup>
                 <p>Your email will be your Apple ID.</p>
               </FormControl>
@@ -82,7 +121,12 @@ export const Signup = ({
                     color="gray.300"
                     children={<BsFillCalendarDateFill color="gray.300" />}
                   />
-                  <Input type="date" placeholder="Birth Date" />
+                  <Input
+                    type="date"
+                    placeholder="Birth Date"
+                    name="dateofbirth"
+                    // onChange={handleChange}
+                  />
                 </InputGroup>
               </FormControl>
               <FormControl mt={5}>
@@ -90,6 +134,8 @@ export const Signup = ({
                   <Input
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
+                    name="password"
+                    onChange={handleChange}
                   />
                   <InputRightElement h={"full"}>
                     <Button
@@ -109,7 +155,8 @@ export const Signup = ({
                 <Button
                   colorScheme="telegram"
                   ref={cancelRef}
-                  onClick={handelhideshow}
+                  onClick={handelsubmit}
+                  // onClick={handelhideshow}
                   //   onClick={onClose}
                 >
                   Create ID

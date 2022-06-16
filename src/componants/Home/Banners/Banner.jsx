@@ -7,6 +7,7 @@ import {
   Heading,
   Button,
   Text,
+  Center,
   Container,
 } from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
@@ -23,28 +24,21 @@ const settings = {
   infinite: true,
   autoplay: true,
   speed: 500,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 3000,
   slidesToShow: 1,
   slidesToScroll: 1,
 };
 
 export default function Banner() {
-  // As we have used custom buttons, we need a reference variable to
-  // change the state
   const [slider, setSlider] = useState("");
 
-  // These are the breakpoints which changes the position of the
-  // buttons as the screen size changes
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
-
-  // This list contains all the data for carousels
-  // This can be static or loaded from a server
 
   return (
     <Box
       position={"relative"}
-      height={"800px"}
+      height={"500px"}
       width={"full"}
       overflow={"hidden"}
     >
@@ -91,14 +85,13 @@ export default function Banner() {
         {cards.map((card, index) => (
           <Box
             key={index}
-            height={"6xl"}
+            height={"xl"}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
             backgroundImage={`url(${card.image})`}
           >
-            {/* This is the block you need to change, to customize the caption */}
             <Container size="container.lg" height="600px" position="relative">
               <Stack
                 spacing={6}
