@@ -33,6 +33,7 @@ import { useNavigate } from "react-router-dom";
 import { useReducer } from "react";
 import { registernuser } from "../../../Redux/Registration/action";
 import PricingPlans from "./PricingPlans";
+import { CardDetails } from "./CardDetails";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
@@ -83,8 +84,9 @@ export const Signup = ({
             <Tabs size="md" variant="enclosed">
               <TabList>
                 <Center>
-                  <Tab>Tab 1</Tab>
-                  <Tab>Tab 2</Tab>
+                  <Tab>User Details</Tab>
+                  <Tab>Pricing Plans</Tab>
+                  <Tab>Make Payment</Tab>
                 </Center>
               </TabList>
               <TabPanels>
@@ -165,9 +167,12 @@ export const Signup = ({
                           </Button>
                         </InputRightElement>
                       </InputGroup>
+                      <Text size="5px">
+                        8-20 length characters(A-Z,a-z,0-9 only) ex- Abcd@1235
+                      </Text>
                     </FormControl>
                   </Container>
-                  <Center>
+                  {/* <Center>
                     <AlertDialogFooter>
                       <Button
                         colorScheme="telegram"
@@ -179,7 +184,7 @@ export const Signup = ({
                         Create ID
                       </Button>
                     </AlertDialogFooter>
-                  </Center>
+                  </Center> */}
                   <Stack pt={3} mb={5}>
                     <Text align={"center"}>
                       Already a user?{" "}
@@ -191,6 +196,13 @@ export const Signup = ({
                 </TabPanel>
                 <TabPanel>
                   <PricingPlans />
+                </TabPanel>
+                <TabPanel>
+                  <CardDetails
+                    // handelhideshow={handelhideshow}
+                    cancelRef={cancelRef}
+                    handelsubmit={handelsubmit}
+                  />
                 </TabPanel>
               </TabPanels>
             </Tabs>

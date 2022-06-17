@@ -1,19 +1,36 @@
+
+import Defending_Jacob from "../../Videos/Defending_Jacob_.mp4"
+import Finch from "../../Videos/Finch.mp4"
+import Fondation from "../../Videos/fondation.mp4"
+import Mankind from "../../Videos/for all mankind.mp4"
+import Home from "../../Videos/home.mp4"
+import Morning from "../../Videos/morning.mp4"
+import See from "../../Videos/see.mp4"
+import Sev from "../../Videos/sev.mp4"
+import Tehran from "../../Videos/Tehran.mp4"
+import Suspicion from "../../Videos/Suspicion.mp4"
+
 export const cards = [
+
   {
     image:
-      "https://is3-ssl.mzstatic.com/image/thumb/cyRvgYnPlaVn3rN2SDdW1Q/1000x500.webp",
+      "https://nameh-dhiman.github.io/Apple-TV-Clone-Project.github.io/Images/Tedd%20Lasso.jpg",
   },
   {
     image:
-      "https://is2-ssl.mzstatic.com/image/thumb/8593WFOGVTTA1ncIGrL37g/1478x500.webp",
+      "https://9to5mac.com/wp-content/uploads/sites/6/2022/02/sky-is-everywhere-how-to-watch.jpg?quality=82&strip=all",
   },
   {
     image:
-      "https://is5-ssl.mzstatic.com/image/thumb/owNSUO3F109RC75YDPMY7A/1478x500.webp",
+      "https://flxt.tmsimg.com/assets/p17586756_b_h8_af.jpg",
   },
   {
     image:
-      "https://is1-ssl.mzstatic.com/image/thumb/L79If4rL5GAF2ffGc7jBRg/1478x500.webp",
+      "https://is1-ssl.mzstatic.com/image/thumb/Features126/v4/93/50/f4/9350f4f6-4c50-f6a5-6976-446a5333b265/U0ZfVFZBX1dXX0RlYXItUzItQ29taW5nX1Nvb24tQnJpY2subHNy.lsr/1478x832fe.webp",
+  },
+  {
+    image:
+      "https://www.apple.com/tv-pr/articles/2022/01/global-hit-series-the-morning-show-starring-and-executive-produced-by-jennifer-aniston-and-reese-witherspoon-renewed-for-season-three/images/big-image/big-image-01/011021_The_Morning_Show_Renewed_Season_Three_Big_Image_01_big_image_post.jpg.large.jpg",
   },
 ];
 
@@ -34,108 +51,148 @@ export const images = [
 
 const comingSoon = [
   {
+    id : 1,
     image:
       "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/d8/b8/bf/d8b8bff6-e7b0-5be4-9930-a779aea319e3/U0YtVFZBLVdXLVRoZV9Qcm9ibGVtX0pvbl9TdGV3YXJ0Lmxzcg.lsr/1478x832fe.webp",
     info: "New Episodes Premiere March 3",
+    video : Defending_Jacob
+    
   },
   {
+    id : 2,
     image:
       "https://is1-ssl.mzstatic.com/image/thumb/Features126/v4/93/50/f4/9350f4f6-4c50-f6a5-6976-446a5333b265/U0ZfVFZBX1dXX0RlYXItUzItQ29taW5nX1Nvb24tQnJpY2subHNy.lsr/1478x832fe.webp",
     info: "New Season Premiere March 3",
+    video : Fondation
   },
   {
+    id : 3,
     image:
       "https://is2-ssl.mzstatic.com/image/thumb/Features125/v4/db/34/3b/db343b95-7cd0-2001-0282-771fff181727/U0YtVFZBLVdXLUNlbnRyYWxfUGFyay1TMkEtTGF1bmNoLmxzcg.lsr/1478x832fe.webp",
     info: "New Episodes Premiere March 4",
+    video : Finch
   },
   {
+    id : 4,
     image:
       "https://is2-ssl.mzstatic.com/image/thumb/Features126/v4/49/c4/8b/49c48b53-8b6f-773f-be76-26ec9ab48152/U0YtVFZBLVdXLUxhc3RfRGF5c19vZl9QdG9sZW15X0dyZXktQ1NfQnJpY2subHNy.lsr/1478x832fe.webp",
     info: "New Series Premieres March 11",
+    video : Home
   },
   {
+    id : 5,
     image:
       "https://is2-ssl.mzstatic.com/image/thumb/Features116/v4/96/0d/8e/960d8ef8-5773-9678-7738-c74c9d763853/U0YtVFZBLVdXLVRoZV9Tbm9vcHlfU2hvdy1TMkEtQ1NfQnJpY2subHNy.lsr/1478x832fe.webp",
     info: "New Season Premiere March 11",
+    video : Mankind
   },
   {
+    id : 6,
     image:
       "https://is2-ssl.mzstatic.com/image/thumb/Features116/v4/32/1e/39/321e395c-2b34-6f5a-3768-764252769471/U0YtVFZBLVdXLVdlY3Jhc2hlZC1DUy1Ccmlja19ub0J1Zy5sc3I.lsr/1478x832fe.webp",
     info: "New Series Premiere March 18",
+    video : Morning
   },
   {
+    id : 7,
     image:
       "https://is4-ssl.mzstatic.com/image/thumb/Features126/v4/e0/04/56/e0045660-db0b-37da-bde5-91a431d28574/U0YtVFZBLVdXLVBhY2hpbmtvLUVhcmx5X0NTLmxzcg.lsr/1478x832fe.webp",
     info: "New Series Premiere March 25",
+    video : See
   },
   {
+    id : 8,
     image:
       "https://is2-ssl.mzstatic.com/image/thumb/Features116/v4/a2/a4/0d/a2a40dbb-06be-1791-d241-019657d17469/U0YtVFZBLVdXLVNsb3dfSG9yc2VzLUNTLUJyaWNrLW5vQnVnLmxzcg.lsr/1478x832fe.webp",
     info: "New Series Premiere April 1",
+    video : Sev
   },
   {
+    id : 9,
     image:
       "https://is3-ssl.mzstatic.com/image/thumb/Features116/v4/25/ee/d1/25eed172-b1de-32c4-ea17-be19f53cf21e/U0YtVFZBLVdXLVNoaW5pbmdfR2lybHMtQ1MubHNy.lsr/1478x832fe.webp",
     info: "New Series Premiere April 29",
+    video : Suspicion
   },
   {
+    id : 10,
     image:
       "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/7e/e4/05/7ee40559-a590-1c90-9057-d9e14c76af6d/U0YtVFZBLVdXLUx1Y2stQ1MtQnJpY2stbm9CdWcubHNy.lsr/1478x832fe.webp",
     info: "New Film Premiere August 5",
+    video : Tehran
   },
 ];
 
 const tales = [
   {
+    id : 1,
     image:
       "https://is2-ssl.mzstatic.com/image/thumb/6tJakyTEtS0vrgdc9POZpg/738x416.webp",
+    video : Sev
   },
   {
+    id : 2,
     image:
       "https://is1-ssl.mzstatic.com/image/thumb/yXhlXOFkS9yJ1kMmOhfIbg/738x416.webp",
+    video : See  
   },
   {
+    id : 3,
     image:
       "https://is4-ssl.mzstatic.com/image/thumb/h8oGFN-jdPeHY8j3EM_WnQ/738x416.webp",
+    video : Home
   },
   {
+    id : 4,
     image:
       "https://is5-ssl.mzstatic.com/image/thumb/Cof8vC9vaCH-GYX6JltrQA/738x416.webp",
+    video : Mankind
   },
   {
+    id : 5,
     image:
       "https://is4-ssl.mzstatic.com/image/thumb/EjmCDwq97jEEe9RuKY7aNw/738x416.webp",
+    video : Fondation
+
   },
   {
+    id : 6,
     image:
       "https://is2-ssl.mzstatic.com/image/thumb/78-I7VenST4ztZYfwMf6AQ/738x416.webp",
   },
   {
+    id : 7,
     image:
       "https://is5-ssl.mzstatic.com/image/thumb/NHLksWLSZpTcIw36-n7vWA/738x416.webp",
+    video : Defending_Jacob
   },
 ];
 
 const mysteries = [
   {
+   
     image:
       "https://is2-ssl.mzstatic.com/image/thumb/dbEKo7rp5RGNNDrCbA7AUQ/738x416.webp",
   },
   {
     image:
       "https://is2-ssl.mzstatic.com/image/thumb/vB48H4eBprLJ-WdCBTA6cw/738x416.webp",
+
   },
   {
     image:
       "https://is1-ssl.mzstatic.com/image/thumb/mqP1mK0HzuFhIBXsd_Q_SA/738x416.webp",
+  
   },
   {
     image:
       "https://is4-ssl.mzstatic.com/image/thumb/RP47edx-hRW2rCun48Lx2w/738x416.webp",
+   
   },
   {
     image:
       "https://is2-ssl.mzstatic.com/image/thumb/FQV5QO8Xa5gbRlB8jXX9rw/738x416.webp",
+      
   },
   {
     image:
@@ -159,6 +216,8 @@ const voice = [
   {
     image:
       "https://is3-ssl.mzstatic.com/image/thumb/3iAbZQ4pznOpDRenkvOhNA/738x416.webp",
+    vide : Fondation
+  
   },
   {
     image:

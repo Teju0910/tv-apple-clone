@@ -27,7 +27,7 @@ import { signout } from "../../../Redux/Login/action";
 function Navbar() {
   const token = JSON.parse(localStorage.getItem("tvappletoken"));
   const reduxtoken = useSelector((store) => store);
-  console.log(reduxtoken, "tokk");
+  // console.log(reduxtoken, "tokk");
   const [hide, sethide] = useState(true);
   useEffect(() => {}, [token]);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -99,12 +99,7 @@ function Navbar() {
             cursor={"pointer"}
             minW={0}
           >
-            <Avatar
-              size={"md"}
-              src={
-                "https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
-              }
-            />
+            <Avatar size={"md"} src={"https://bit.ly/broken-link"} mr={5} />
           </MenuButton>
           <MenuList>
             <MenuItem>
