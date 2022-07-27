@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# tv-apple-clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Apple TV+ is a streaming service featuring Apple Originals — award-winning series, compelling dramas, groundbreaking documentaries, kids' entertainment, comedies, and more
 
-In the project directory, you can run:
+## How to run the app?
+- Clone the repo and run the app.
+    - https://github.com/Teju0910/tv-apple-clone.git
+- Execute `npm start` command in your CLI, and enjoy exploring different technical courses on the go. Happy Learning!
+## Built with
+- React
+- JavaScript
+- Node.js
+- Express: A flexible Node.js web application framework
+- Mongoose: An Object Data Modeling (ODM) library for MongoDB and Node.js
+- MongoDB Atlas: A fully-managed cloud database developed by the same people that build MongoDB
+- HTML
+- CSS
+- Chakra Ui
 
-### `npm start`
+## Created Pages
+- Home Page
+- Payment Gateway
+- Sign in/Sign up Page
+- Video List Page
+- Watch Video
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Sample Login details
+Email Id - Abcde@789.com
+Password - Qwer@789
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Landing page :
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Landing Page](https://i.ibb.co/RQXtSRH/apple-landing.png)
 
-### `npm run build`
+### Apple Tv movies/series list page :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Mobile list page](https://i.ibb.co/gRkxWxC/apple-list.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Apple Tv play video page :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Mobile overview page](https://i.ibb.co/vxH0Wwj/apple-3.png)
 
-### `npm run eject`
+### Apple Tv footer page :
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Mobile detail page](https://i.ibb.co/zVwpRvT/apple-footer.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
