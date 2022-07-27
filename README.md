@@ -25,13 +25,14 @@ Apple TV+ is a streaming service featuring Apple Originals — award-winning ser
 - Video List Page
 - Watch Video
 
+## Deployment Link:-
+[https://tv-apple-clone.netlify.app/](https://tv-apple-clone.netlify.app/)
+
 ## Sample Login details
 Email Id - Abcde@789.com
 Password - Qwer@789
 
 ### Landing page :
-
-
 ![Landing Page](https://i.ibb.co/RQXtSRH/apple-landing.png)
 
 ### Apple Tv movies/series list page :
